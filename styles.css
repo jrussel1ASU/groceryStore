@@ -32,19 +32,266 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+
 }
 ol, ul {
 	list-style: none;
 }
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*Variables*/
+:root{
+	--blueberry: #1f4373;
+	--transparentblueberry: #1F437380;
+	--veg: #96A61F;
+	--grain:#BF9004 ;
+	--toast: #73532D;
+	--cranberry: #A64037;
+	--white: #FFFFFF;
+	line-height: 2em;
+}
+/*Global Text Styles*/
+html{
+	font-family: 'Public Sans', sans-serif;
+	font-size:1rem;
+	font-weight:500;
+}
+h1,h2,h3,h4{
+	font-weight:800;
+}
+h1{
+	font-size:2rem; 
+}
+h2{
+	font-size: 1.75rem;
+}
+h3{
+	font-size: 1.5rem; 
+}
+small{
+	font-size:.75em;
+}
+h4, h5, header h2, #categories h3, #allCoupons h3, footer h2{
+	position:absolute;
+	left:-10000px;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+#skipLink a{
+	position:absolute;
+	left:-10000px;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+#skipLink a:focus{
+	position:static;
+	width:auto;
+	height:auto;
+}
+#weekly h2, #weekly p,#weekly a {
+	text-align:center;
+	position:relative; top: 40%;
+	backdrop-filter: blur(10px);
+	
+}
+strong{
+	font-weight: bold;
+}
+em{
+	font-style: italic;
+}
+/*Global Color Styles*/
+html{
+	margin:0 auto; 
+}
+header, footer{
+	background-color:var(--transparentblueberry);
+	color:var(--white);
+}
+main{
+	background-color: var(--blueberry);
+}
+#adCategories, #couponList, #club{
+	background-color:var(--white);
+}
+#weekly, #weekly a{
+	color:var(--white);
+}
+.required{
+	color: var(--cranberry);
+}
+#weekly a, .coupons a{
+	background-color: var(--cranberry);
+	padding:3px 10px 3px 10px;
+	border-radius: 15px;
+	color: var(--white);
+}
+.viewAll{
+	background-color: var(--veg);
+	padding:3px 15px 3px 15px;
+	color: var(--white);
+}
+#adCategories, #couponList, #club{
+	filter:drop-shadow(4px 4px 10px #f3f4f780);
+}
+a:visited{
+	color:var(--blueberry);
+}
+a:hover{
+	color:var(--grain);
+}
+a:active{
+	color:var(--white);
+}
+/*Global Content Layout*/
+h1, nav, #cart{
+	display: inline-block;
+}
+li{
+	display: inline;
+}
+header, footer{
+	height:15vh;
+}
+#weekly{
+	height:50vh;
+	margin-left:0;
+	line-height: 2em;
+	background-image: url(hero.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: 100vw 50vh;
+	text-align: center;
+}
+#adCategories, #couponList{
+	line-height: 1.5em;
+}
+#adCategories, #couponList{
+	width:90%;
+	margin:1vw 0vw 5vw 5vw;
+}
+#club{
+	width:90%;
+	margin:2vw 1vw 0vw 5vw;
+	padding-bottom:3vw;
+}
+form{
+	line-height:1.5em;
+}	
+label{
+	display:block;
+}
+label,input{
+	margin-left:2vw;
+}
+#categories{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	
+}
+.viewAll{
+	margin-left: calc(40vw + 1px);
+}
+
+#allCoupons{
+	line-height:1.5em;
+}
+#meat{
+	padding: 2vw;
+	grid-area: "1";
+}
+#seafood{
+	padding: 2vw;
+	grid-area: "2";
+}
+#dairy{
+	padding: 2vw;
+	grid-area: "3";
+}
+#produce{
+	padding: 2vw;
+	grid-area: "4"
+}
+#bakery{
+	padding: 2vw;
+	grid-area: "5"
+}
+#beverages{
+	padding: 2vw;
+	grid-area: "6"
+}
+#couponList, #adCategories, #club{
+	border-style:solid;
+	border-width:1px;
+}
+#allCoupons img{
+	border-style: dashed;
+	border-width: 3px;
+}
+#dressing, #honey, #marinara, #mustard{
+	padding: 2vw;
+}
+	
+#club p{
+	font-size: 1em;
+	line-height: 2em;
+}
+footer{
+	padding-top:5px;
+}
+#categories a{
+	padding-left:18vw;
+}
+/*Image Masks*/
+#meat img,#seafood img, #dairy img, #produce img, #bakery img, #beverages img{
+	clip-path: circle(35% at 58% 50%);
+}
+#adCategories img, #allCoupons img{
+	width: 65%;
+}
+@media screen and (min-width: 600px){
+	#allCoupons{
+		display:grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	#adCategories img{
+		width: 75%;
+	}
+}
+
+@media screen and (min-width:1000px){
+	h1{
+		font-size:3em;
+	}
+	#adCategories img, #allCoupons img{
+		width: 100%;
+	}
+	header{
+		display:block;
+		padding-top:2vh;
+		font-size:1.5em;
+	}
+	#allCoupons, #categories{
+		display:grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	#categories a{
+		padding-left:10vw;
+	}
+	label,input{
+		margin-left:.5vw;
+	}
+	label{
+		display: inline;
+	}
+	header a{
+		padding-left:8px;
+	}
+}
+	
+
